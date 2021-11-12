@@ -1,0 +1,25 @@
+<table class="table table-light table-hover table-sm table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>VEHICULO</th>
+            <th>MATRICULA</th>
+            <th>TAREA</th>
+            <th>ESTADO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of getFotocopias()">
+            <td style="vertical-align:middle">{{item.vehiculo}}</td>
+            <td style="vertical-align:middle">{{item.matricula}}</td>
+            <td style="vertical-align:middle">{{item.tarea }}</td>
+            <td class="text-center">
+                <!--<button class="btn btn-danger btn-sm" (click)="deleteFotocopia(item.id)" value="Proceder">
+        Proceder
+    </button>-->
+                <input *ngIf="item.estado == 'Proceder'" (click)="cambiaBoton(item.id)" class="btn btn-warning" type="button" value="Proceder" />
+                <input *ngIf="item.estado == 'Finalizado'" (click)="cambiaBoton(item.id)" class="btn btn-success" type="button" value="Finalizado" disabled />
+
+            </td>
+        </tr>
+    </tbody>
+</table>

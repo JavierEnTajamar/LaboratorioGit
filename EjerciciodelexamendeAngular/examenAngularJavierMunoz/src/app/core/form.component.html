@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="mb-3 row">
+        <label class="col-form-label col-4">Vehiculo</label>
+        <div class="col-8">
+            <input class="form-control" name="vehiculo" [(ngModel)]="fotocopia.vehiculo" required placeholder="Marca y modelo"/>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-form-label col-4">Matrícula</label>
+        <div class="col-8">
+            <input class="form-control" pattern="^[0-9]{4}[-][a-zA-Z]{3}$" name="matricula" [(ngModel)]="fotocopia.matricula" required placeholder="0000-AAA"/>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-form-label col-4">Tarea</label>
+        <div class="col-8">
+            <select class="form-select" name="tarea" [(ngModel)]="fotocopia.tarea">
+                <option selected value="" disabled>Tareas posibles</option>
+                <option value="Cambio de Aceite">Cambio de Aceite</option>
+                <option value="Arreglo Pinchazo">Arreglo Pinchazo</option>
+                <option value="Filtros y Aceite">Filtros y Aceite</option>
+                <option value="Otros">Otros</option>
+            </select>
+        </div>
+    </div>
+
+    <button class="btn btn-success w-100">Solicitar</button>
+</form>
